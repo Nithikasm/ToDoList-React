@@ -5,8 +5,10 @@ export function NewTodoForm({something}) {
     function handleSubmit(e){
     e.preventDefault(e)
     if(newItem=== " ") return
+
     something(newItem)
-    setNewItem(" ")
+
+    setNewItem("")
   }
     return (
         <form onSubmit={handleSubmit} 
@@ -16,7 +18,8 @@ export function NewTodoForm({something}) {
       <input 
         value={newItem}
         onChange={e=>setNewItem(e.target.value)}
-        type="text" id="item" />
+        type="text" 
+        id="item" />
     </div>
     <button className="btn">ADD</button>
   </form>
